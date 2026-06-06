@@ -46,7 +46,6 @@ const contentVariants = {
   exit: { opacity: 0, x: -12 },
 }
 
-const contentTransition: Transition = { duration: 0.15, ease: 'easeIn' as const }
 const contentEnterTransition: Transition = { duration: 0.2, ease: 'easeOut' as const }
 
 export function ProjectPopup({ building, projectIndex, onClose, onNavigate }: ProjectPopupProps) {
@@ -129,6 +128,7 @@ export function ProjectPopup({ building, projectIndex, onClose, onNavigate }: Pr
                       const orientation = orientations[src] ?? 'landscape'
                       return (
                         <ScreenshotThumb key={i} orientation={orientation}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={src}
                             alt={`${item.title} screenshot ${i + 1}`}
@@ -170,6 +170,7 @@ export function ProjectPopup({ building, projectIndex, onClose, onNavigate }: Pr
                           const orientation = orientations[src] ?? 'landscape'
                           return (
                             <ScreenshotThumb key={j} orientation={orientation}>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
                                 src={src}
                                 alt={`${deliverable.title} ${j + 1}`}
